@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>IIFP-24</title>
+<style>
+body { 
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+  background:#f4f6fb; 
+}
+.container { 
+  max-width:900px; 
+  margin: 4rem auto;
+  padding: 3rem 4rem;
+  background-color: #fff;
+  border-radius: 50px;
+}
+.question { 
+  margin-bottom:15px; 
+}
+button { 
+  padding:10px; 
+  margin-top: 20px; 
+  background:#4f46e5; 
+  color:white; 
+  border:none;
+  border-radius: 20px;
+  cursor: pointer; 
+}
+.result { 
+  margin-top:20px; 
+  background:#eef2ff; 
+  padding:15px; 
+  }
+</style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Evaluación Psicológica Integral</h1>
+    <h2>Durante las últimas 2 semanas, indica con qué frecuencia te has sentido así:</h2>
+    <form id="test"></form>
+    <button onclick="calcular()">Ver resultados</button>
+    <div id="res" class="result" style="display:none;"></div>
+  </div>
+
+<script>
+const preguntas = [
+"Me ha costado disfrutar de actividades que normalmente me resultan agradables",
+"Me he sentido desanimado/a o con poca esperanza sobre el futuro",
+"He tenido poca energía incluso para tareas cotidianas",
+"Me he sentido insatisfecho/a conmigo mismo/a",
+
+"He estado en tensión o alerta la mayor parte del tiempo",
+"Me ha resultado difícil dejar de preocuparme una vez que empiezo",
+"He sentido que algo malo podría ocurrir en cualquier momento",
+"Me ha costado relajarme incluso en momentos tranquilos",
+
+"He sentido que las demandas de mi vida me sobrepasan",
+"Me ha costado desconectarme de las preocupaciones del día",
+"He estado irritable o con poca tolerancia",
+"He tenido dificultades para descansar o recuperarme",
+
+"Me ha costado sentirme conectado/a emocionalmente con otras personas",
+"He evitado conversaciones o situaciones importantes en mis relaciones",
+"Me he sentido incomprendido/a o poco apoyado/a",
+"He tenido conflictos o tensiones en mis relaciones cercanas",
+
+"Me he sentido satisfecho/a con mi vida",
+"He experimentado momentos de tranquilidad o bienestar",
+"He sentido que mi vida tiene sentido o dirección",
+"He podido disfrutar del presente",
+
+"Mis pensamientos negativos han influido mucho en lo que hago",
+"He evitado situaciones por miedo a cómo me harían sentir",
+"Me ha costado tomar decisiones por dudas o pensamientos repetitivos",
+"He sentido que mis emociones controlan mis acciones"
+];
+
+const opciones = ["Nunca","Algunos días","Más de la mitad de las veces","Casi todos los días"];
+
+const form = document.getElementById("test");
+
+preguntas.forEach((p,i)=>{
+  let html = "<div class='question'><p>"+(i+1)+". "+p+"</p>";
+  opciones.forEach((op,val)=>{
+    html += "<label><input type='radio' name='q"+i+"' value='"+val+"'> "+op+"</label><br>";
+  });
+  html += "</div>";
+  form.innerHTML += html;
+});
+
+function calcular(){
+  let total=0;
+  let sub=[0,0,0,0,0,0];
+
+  for(let i=0;i<24;i++){
+    let r=document.querySelector("input[name='q"+i+"']:checked");
+    if(!r){ alert("Responde todo"); return;}
+    let v=parseInt(r.value);
+
+    if(i>=16 && i<=19) v = 3 - v; // invertir bienestar
+
+    total+=v;
+
+    let idx = Math.floor(i/4);
+    sub[idx]+=v;
+  }
+
+  let nivel="";
+  if(total<=18) nivel="Funcionamiento saludable";
+  else if(total<=36) nivel="Malestar leve";
+  else if(total<=54) nivel="Malestar moderado";
+  else nivel="Malestar alto";
+
+  let html = "<h2>Resultado</h2>";
+  html += "<p><b>Puntaje total:</b> "+total+"/72</p>";
+  html += "<p><b>Nivel:</b> "+nivel+"</p>";
+
+  html += "<hr>";
+  html += "<p><b>Perfil:</b></p>";
+  html += "<p>Ánimo: "+sub[0]+"/12</p>";
+  html += "<p>Ansiedad: "+sub[1]+"/12</p>";
+  html += "<p>Estrés: "+sub[2]+"/12</p>";
+  html += "<p>Relacional: "+sub[3]+"/12</p>";
+  html += "<p>Bienestar: "+sub[4]+"/12</p>";
+  html += "<p>Fusión cognitiva: "+sub[5]+"/12</p>";
+
+  document.getElementById("res").style.display="block";
+  document.getElementById("res").innerHTML=html;
+}
+</script>
+
+</body>
+</html>

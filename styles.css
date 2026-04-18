@@ -1,0 +1,730 @@
+* {
+    font-family: 'Hind Madurai';
+    font-size: 1rem;
+    padding: 0;
+    margin: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+section {
+    scroll-margin-top: 50px;
+}
+/* MENU HEADER NAV */
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 1.5rem 5rem;
+    position: sticky;
+    z-index: 1000;
+    top: 0;
+}
+header.scrolled {
+    padding: 1rem 5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+nav {
+    display: flex;
+    gap: 1rem;
+}
+.name-link,
+.main-name,
+.nav-link {
+    transition: all .3s ease;
+}
+.name-link:hover,
+.main-name:hover,
+.nav-link:hover {
+    color: orangered;
+    font-weight: bolder;
+    transform: scale(1.03);
+}
+.hamburger {
+    display: none;
+}
+/* MAIN HERO */
+.hero {
+    height: 90vh;
+}
+.hero-text {
+    text-align: center;
+    padding-top: 13rem;
+}
+.hero-p {
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 0.7rem 20rem;
+}
+h1 {
+    font-family: 'Oswald';
+    font-size: 5rem;
+    padding: 0 18rem;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+.bg-video {
+    position: absolute;
+    top: 3rem;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
+.hero-ctas {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 0;
+    margin: 0;
+    gap: 1rem;
+}
+.h-cta-left {
+    background-color: #25D366;
+    padding: 10px 20px;
+    border-radius: 30px;
+    color: white;
+    transition: all .3s ease;
+}
+.h-cta-left:hover {
+    transform: scale(1.03);
+    background-color: #1ea750;
+    font-weight: bold;
+}
+.h-cta-right {
+    border: 2px solid white;
+    padding: 8px 18px;
+    border-radius: 30px;
+    color: white;
+    transition: all .3s ease;
+}
+.h-cta-right:hover {
+    transform: scale(1.03);
+    border: none;
+    padding: 10px 20px;
+    background-color: white;
+    color: darkslategray;
+    font-weight: bold;
+}
+/* TESTIMONIOS */
+.testimonials {
+    text-align: center;
+    padding: 3rem 10rem;
+    background: #fff;
+}
+.testimonials-title {
+    font-family: 'Oswald';
+    font-weight: 500;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+.carousel {
+    overflow: hidden;
+    max-width: 600px;
+    margin: auto;
+}
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.slide {
+    min-width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.stars {
+    font-size: 20px;
+    margin: 10px 0;
+}
+/* ABOUT */
+.about-me {
+    background-color: #f7f4f4;
+    padding: 3rem 20rem;
+}
+.about-title {
+    display: flex;
+    font-family: 'Oswald';
+    font-weight: 500;
+    color: white;
+    justify-content: center;
+    padding-bottom: 2rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    text-align: left;
+    font-size: 3rem;
+}
+.about-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 3rem;
+}
+.about-text {
+    text-align: justify;
+}
+.profile-pic {
+    width: 280px;
+    height: auto;
+    border-radius: 15px;
+}
+/* SERVICES */
+.services {
+    background-color: #fff;
+    margin: 0;
+    padding: 3rem 4rem 5rem 4rem;
+}
+.section-title {
+    font-family: 'Oswald';
+    text-align: center;
+    padding-bottom: 3rem;
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: black;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+.services-container {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 3rem;
+}
+.service-card {
+    border-radius: 25px;
+    padding: 1rem;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    background-color: white;
+    transition: all .3s ease;
+}
+.service-card:hover {
+    transform: scale(1.02);
+    cursor: pointer;
+}
+.service-card h2 {
+    font-family: 'Oswald';
+    font-size: 1.2rem;
+    font-weight: 350;
+}
+.service-desc {
+    padding: 1rem;
+}
+.icon {
+    font-size: 2.5rem;
+}
+/* HOW IT WORKS */
+#how-it-works {
+    padding: 3rem 5rem 5rem 5rem;
+    text-align: center;
+    background-color: #2d4c53dd;
+}
+.hiw-title {
+    font-family: 'Oswald';
+    text-align: center;
+    padding-bottom: 0.5rem;
+    font-size: 2.8rem;
+    font-weight: 500;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+.hiw-subtitle {
+    padding-bottom: 3rem;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 200;
+}
+.steps {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    position: relative;
+}
+.step {
+    flex: 1;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 16px;
+    transition: all .3s ease;
+    position: relative;
+    z-index: 1;
+}
+.step:hover {
+    transform: translateY(-5px);
+}
+.circle {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    background: orangered;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+.step h3 {
+    margin-bottom: 0.5rem;
+}
+.step p {
+    font-size: 0.9rem;
+    color: #555;
+}
+.steps::before {
+    content: "";
+    position: absolute;
+    top: 105px;
+    left: 5%;
+    width: 90%;
+    height: 3px;
+    background: #2d4c53;
+    z-index: 0;
+}
+.cta-text {
+    color: #fff;
+    padding: 3rem 0 2rem 0;
+    font-size: 1.1rem;
+}
+.hiw-cta {
+    background-color:  orangered;
+    padding: 8px 18px;
+    border-radius: 30px;
+    color: white;
+    transition: all .3s ease;
+}
+.hiw-cta:hover {
+    transform: scale(1.03);
+    border: none;
+    padding: 10px 20px;
+    background-color: white;
+    color: darkslategray;
+    font-weight: bold;
+}
+/* TESTIMONIOS LARGOS */
+#testimonials {
+    padding: 4rem 5rem;
+    text-align: center;
+}
+.inspiring-title {
+    font-family: 'Oswald';
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: black;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+#testimonials .inspiring-subtitle {
+    max-width: 600px;
+    margin: 1rem auto 3rem;
+    font-size: 1.1rem;
+}
+.testimonials-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+.testimonial-card {
+    width: 280px;
+    min-height: 420px;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    transition: all .3s ease;
+}
+.testimonial-card:hover {
+    transform: translateY(-6px);
+}
+.testimonial-text {
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.6;
+}
+.testimonial-footer {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+}
+
+.testimonial-footer img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.testimonial-footer span {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+/* PRICING */
+#pricing {
+    padding: 4rem 5rem;
+    text-align: center;
+    background-color: #2d4c53dd;
+}
+.pricing-title {
+    font-family: 'Oswald';
+    text-align: center;
+    font-weight: 500;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    font-size: 2.8rem;
+}
+.pricing-group {
+    padding: 1.5rem;
+}
+.pricing-subtitle {
+    font-size: 1.5rem;
+    font-weight: 200;
+    color: #fff;
+}
+.pricing-cards {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+.card {
+    background: #fff;
+    padding: 2rem;
+    width: 280px;
+    border-radius: 16px;
+    position: relative;
+    transition: all .3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card:hover {
+    transform: translateY(-5px);
+}
+.featured {
+    border: 2px solid orangered;
+    transform: scale(1.05);
+}
+.badge {
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    background: orangered;
+    color: #fff;
+    padding: 0.3rem 0.6rem;
+    border-radius: 8px;
+    font-size: 0.8rem;
+}
+.price {
+    font-size: 2.5rem;
+    font-weight: normal;
+    margin: 0;
+}
+.hotprice {
+    font-size: 4.5rem;
+    margin-bottom: 0;
+}
+.old-price {
+    text-decoration: line-through;
+    color: gray;
+    font-size: 1.5rem;
+}
+.per-session {
+    font-size: 0.9rem;
+    color: #555;
+}
+.desc {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+.cta-pricing {
+    display: inline-block;
+    align-self: center;
+    background-color: orangered;
+    padding: 8px 20px;
+    border-radius: 30px;
+    margin-top: 10px;
+    color: white;
+    font-size: 0.9rem;
+    transition: all .3s ease;
+}
+.cta-pricing:hover {
+    transform: scale(1.03);
+    background-color: #25D366;
+    font-weight: bold;
+    cursor: pointer;
+}
+/* RECURSOS GRATUITOS */
+.resources {
+    padding: 3rem 20rem;
+    background-color: #f7f4f4;
+}
+.resources-title {
+    font-family: 'Oswald';
+    text-align: center;
+    padding-bottom: 2rem;
+    font-size: 2.8rem;
+    font-weight: 500;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+.assessment-link {
+    color: blue;
+    text-decoration: underline;
+}
+.resources-description {
+    text-align: justify;
+}
+.ebook-container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2rem;
+    gap: 3rem;
+}
+.ebookcover {
+    width: 200px;
+    height: 320px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    transition: all .3s ease;
+}
+.ebookcover:hover {
+    transform: scale(1.03);
+}
+.ebook-text {
+    text-align: justify;
+}
+/* FORMULARIO DE CONTACTO */
+.contact {
+    padding: 3rem;
+}
+.contact-title {
+    font-family: 'Oswald';
+    font-weight: 500;
+    font-size: 2.5rem;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+.contact-container {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 17rem 0 17rem;
+}
+.subtitle {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 15px;
+}
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+textarea {
+    resize: none;
+    height: 120px;
+}
+button {
+    width: 17%;
+    padding: 12px;
+    display: block;
+    margin: 5px auto;
+    background: #25D366;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+button:hover {
+    background: #1ea750;
+    transform: scale(1.03);
+    font-weight: bold;
+}
+#respuesta {
+    margin-top: 10px;
+    font-size: 14px;
+    text-align: center;
+}
+/* FOOTER */
+footer {
+    background-color: #2d4c53;
+    height: 20vh;
+}
+.footer {
+    text-align: center;
+    padding-top: 4rem;
+    color: #c3dbe1;
+}
+
+/* FAQ */
+.therapy-title {
+    font-family: 'Oswald';
+    text-align: center;
+    padding-bottom: 3rem;
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: black;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+.faq {
+  max-width: 700px;
+  margin: 50px auto;
+  font-family: Arial, sans-serif;
+}
+.faq-item {
+    border-bottom: 1px solid #ddd;
+}
+.faq-question {
+    background-color: #f7f4f4;
+    padding: 15px;
+    cursor: pointer;
+    font-weight: 500;
+    position: relative;
+}
+.faq-question::after {
+    content: "▼";
+    position: absolute;
+    right: 15px;
+    transition: transform 0.3s ease;
+}
+.faq-answer {
+    text-align: left;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 15px;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+.faq-item.active .faq-answer {
+    padding: 10px 15px;
+    max-height: 300px;
+}
+.faq-item.active .faq-question::after {
+    transform: rotate(180deg);
+}
+
+
+
+@media (max-width: 768px) {
+    body {
+        font-size: 0.95rem;
+    }
+    .hero {
+        height: auto;
+        padding: 6rem 1.5rem 3rem 1.5rem;
+    }
+    nav {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        display: none;
+        padding: 1rem 0;
+    }
+
+    nav.active {
+        display: flex;
+    }
+    .hamburger {
+        display: block;
+        font-size: 1.8rem;
+        cursor: pointer;
+    }
+
+    header {
+        padding: 1rem 1.5rem;
+    }
+    .hero-text {
+        padding-top: 3rem;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+        padding: 0;
+    }
+
+    .hero-p {
+        font-size: 1rem;
+        padding: 1rem 0;
+    }
+    .bg-video {
+        height: 100%;
+        top: 0;
+    }
+    .about-me {
+        padding: 3rem 1.5rem;
+    }
+
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-pic {
+        width: 200px;
+    }
+    .services-container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .steps {
+        flex-direction: column;
+    }
+
+    .steps::before {
+        display: none;
+    }
+    .testimonials {
+        padding: 3rem 1.5rem;
+    }
+    #pricing {
+        padding: 3rem 1.5rem;
+    }
+
+    .pricing-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .featured {
+        transform: none;
+    }
+    .resources {
+        padding: 3rem 1.5rem;
+    }
+
+    .ebook-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .ebookcover {
+        width: 160px;
+        height: auto;
+    }
+    .contact-container {
+        padding: 1rem;
+    }
+
+    button {
+        width: 100%;
+    }
+
+
+}
