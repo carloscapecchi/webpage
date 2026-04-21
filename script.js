@@ -13,7 +13,7 @@ function moveSlide() {
   track.style.transform = `translateX(-${index * 100}%)`;
 }
 
-// cambia cada 4 segundos (ajústalo)
+
 setInterval(moveSlide, 4000);
 
 
