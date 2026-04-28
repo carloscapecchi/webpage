@@ -692,7 +692,9 @@ footer {
         flex-direction: column;
         text-align: center;
     }
-
+    #testimonials {
+        padding: 3rem 2.5rem;
+    }
     .profile-pic {
         width: 200px;
     }
